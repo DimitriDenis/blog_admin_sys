@@ -1,2 +1,1 @@
-#bonjour
-;
+#! / Bin / bash
