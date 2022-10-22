@@ -7,6 +7,10 @@ if [ "$1" == "--help" ]
 then 
 while read line; do echo $line; done < help.txt
 fi 
+if [ "$1" == "--debug" ]
+then 
+echo "idee avec -n -x "
+fi 
 
 touch -a < test.html
 
@@ -26,4 +30,4 @@ EOF
 
 
 
-xdg-open "www.google.com"
+#xdg-open "https://www.youtube.com/"
