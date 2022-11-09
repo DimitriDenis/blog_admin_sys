@@ -1,5 +1,6 @@
 #! / Bin / bash
 
+
 #savoir si on internet 
 
 
@@ -12,9 +13,18 @@ then
 echo "idee avec -n -x "
 fi 
 
-touch -a < test.html
+website="blog"
 
-cat > test.html << EOF
+mkdir $website
+cd $website
+
+# mkdir js
+# mkdir css 
+
+
+
+
+cat > index.html << EOF
 
 <!DOCTYPE html>
 <html>
@@ -28,6 +38,6 @@ cat > test.html << EOF
 
 EOF
 
+# touch css/style.css
 
-
-#xdg-open "https://www.youtube.com/"
+x-www-browser index.html
