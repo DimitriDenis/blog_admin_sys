@@ -1,8 +1,6 @@
 #! / Bin / bash
 
 
-#savoir si on internet 
-
 
 if [ "$1" == "--help" ]
 then 
@@ -23,21 +21,8 @@ cd $website
 
 
 
-
-cat > index.html << EOF
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>New Page</title>
-  </head>
-  <body>
-    <h1>Hello, World!</h1>
-  </body>
-</html>
-
-EOF
+/bin/bash fonction/create2.sh
 
 # touch css/style.css
 
-x-www-browser index.html
+x-www-browser blog/index.html
