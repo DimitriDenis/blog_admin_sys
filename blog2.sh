@@ -19,7 +19,6 @@ create() {
     then 
             mkdir css
     fi
-
 #création du dossier du site 
 website="blog"
 mkdir $website
@@ -35,13 +34,24 @@ echo "
   <body>
     <h1>Hello, World!</h1>" >>index.html
 #faire une boucle pour ajout image 
-for img in "../image"/*
-do 
-echo "<img src='../images/$img'>">>index.html
-done
+if ! [[ -s "../image" ]];
+then
+    #boucle pour afficher image
+    for img in "../image"/*
+    do 
+    echo "<img src='../images/$img'>">>index.html
+    done
+else
+     echo " il n'y a pas d'image dans le dossier image "
+fi
 #fin de la page 
 echo "  </body> </html>">>index.html
 
 }
-create
+
+if ! [[ -e "blog" ]];
+    then 
+        create
+    fi
+
 #x-www-browser blog/index.html

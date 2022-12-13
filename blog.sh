@@ -1,7 +1,5 @@
 #! / Bin / bash
 
-
-
 if [ "$1" == "--help" ]
 then 
 while read line; do echo $line; done < help.txt
@@ -11,34 +9,44 @@ then
 echo "idee avec -n -x "
 fi 
 
-website="blog"
-
-mkdir $website
-cd $website
-
-# mkdir js
-# mkdir css 
-
 create() {
-website="blog"
+    #regarder si les fichier existe 
+    if ! [[ -e "js" ]];
+    then 
+        mkdir js
+    fi
+    if ! [[ -e "css" ]];
+    then 
+            mkdir css
+    fi
 
+#création du dossier du site 
+website="blog"
 mkdir $website
 cd $website
-  cat > index.html << EOF
-
+#creation du fichier page 
+touch index.html
+echo " 
 <!DOCTYPE html>
 <html>
   <head>
     <title>New Page</title>
   </head>
   <body>
-    <h1>Hello, World!</h1>
-  </body>
-</html>
+    <h1>Hello, World!</h1>" >>index.html
+#faire une boucle pour ajout image 
+for img in "../image"/*
+do 
+echo "<img src='../images/$img'>">>index.html
+done
+#fin de la page 
+echo "  </body> </html>">>index.html
 
-EOF
 }
-create
-# touch css/style.css
 
-#x-www-browser blog/index.html
+if ! [[ -e "blog" ]];
+    then 
+        create
+    fi
+
+x-www-browser blog/index.html

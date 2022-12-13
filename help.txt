@@ -1,1 +1,7 @@
-ici nous avons l'aide 
+pour lancer le script :
+bash blog.sh
+
+pour avoir de l'aide:
+bash blog.sh --help
+
+
