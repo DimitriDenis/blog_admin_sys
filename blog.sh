@@ -19,10 +19,26 @@ cd $website
 # mkdir js
 # mkdir css 
 
+create() {
+website="blog"
 
+mkdir $website
+cd $website
+  cat > index.html << EOF
 
-/bin/bash fonction/create2.sh
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Page</title>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+  </body>
+</html>
 
+EOF
+}
+create
 # touch css/style.css
 
-x-www-browser blog/index.html
+#x-www-browser blog/index.html
