@@ -4,4 +4,6 @@ bash blog.sh
 pour avoir de l'aide:
 bash blog.sh --help
 
+pour debugger  la fonction create:
+bash blog.sh --debug 
 

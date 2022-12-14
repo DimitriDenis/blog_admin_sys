@@ -1,6 +1,5 @@
 #! / Bin / bash
 
-
 create_index_html() {
     #regarder si les fichier existe 
     if ! [[ -e "js" ]];
@@ -13,8 +12,8 @@ create_index_html() {
     if ! [[ -e "css" ]];
     then 
         mkdir css
-        cd css
-        touch fichier.css
+        cd js 
+        touch fichier.js
         cd ..
     fi
     #création du dossier du site 
@@ -46,19 +45,34 @@ create_index_html() {
     echo "  </body> </html>">>index.html
 
 }
+#regarde pour le nombre argument 
 if [ "$#" -ne 1 ]; then
- echo "Le nombre d'arguments est invalide"
+    #si il y en a deux 
+    if [ "$#" -ne 3 ]; then
+        if [ "$1" == "add_image" ]; then
+            mv $2 image
+            echo "ajout bien réaliser"
+        elif [ "$2" == "--debug" ]
+            then 
+            set -x 
+        else
+            echo "commande inconnue "
+            exit
+        fi
+    else
+        echo "Le nombre d'arguments est invalide"
+        exit
+    fi
+fi
 
-elif [ "$1" == "--help" ]
+if [ "$1" == "--help" ]
     then 
     while read line; do echo $line; done < help.txt
-elif [ "$1" == "--debug" ]
-    then 
-    echo "idee avec -n -x "
 elif [ "$1" == "start" ]
     then 
     if ! [[ -e "blog" ]];
         then 
+
             create_index_html
             echo "bien crée"
     else
@@ -86,16 +100,15 @@ elif [ "$1" == "delete" ]
             rm -r blog 
             rm -r js
             rm -r css
-            create_index_html
-            echo "bien crée"
+
+            echo "blog bien suprimer"
     else
     echo "vous navez pas crée de blog ou vous l'avez deja suprimmer"
     echo "vous ne pouvez pas utilisé cette commande "
     fi
 else
 echo "commande inconnue "
+
 fi   
 
-
-
-x-www-browser blog/index.html
+#x-www-browser blog/index.html

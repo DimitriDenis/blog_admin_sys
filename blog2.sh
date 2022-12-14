@@ -45,19 +45,34 @@ create_index_html() {
     echo "  </body> </html>">>index.html
 
 }
+#regarde pour le nombre argument 
 if [ "$#" -ne 1 ]; then
- echo "Le nombre d'arguments est invalide"
+    #si il y en a deux 
+    if [ "$#" -ne 3 ]; then
+        if [ "$1" == "add_image" ]; then
+            mv $2 image
+            echo "ajout bien réaliser"
+        elif [ "$2" == "--debug" ]
+            then 
+            set -x 
+        else
+            echo "commande inconnue "
+            exit
+        fi
+    else
+        echo "Le nombre d'arguments est invalide"
+        exit
+    fi
+fi
 
-elif [ "$1" == "--help" ]
+if [ "$1" == "--help" ]
     then 
     while read line; do echo $line; done < help.txt
-elif [ "$1" == "--debug" ]
-    then 
-    echo "idee avec -n -x "
 elif [ "$1" == "start" ]
     then 
     if ! [[ -e "blog" ]];
         then 
+
             create_index_html
             echo "bien crée"
     else
@@ -93,6 +108,7 @@ elif [ "$1" == "delete" ]
     fi
 else
 echo "commande inconnue "
+
 fi   
 
 
