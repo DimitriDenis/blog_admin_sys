@@ -1,5 +1,6 @@
 #! / Bin / bash
 
+
 create_index_html() {
     #regarder si les fichier existe 
     if ! [[ -e "js" ]];
@@ -97,5 +98,4 @@ fi
 
 
 
-
-#x-www-browser blog/index.html
+#x-www-browser localhost:8081
