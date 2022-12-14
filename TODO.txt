@@ -3,12 +3,9 @@ TODO:
  Devra fournir les informations nécessaires à l’utilisation du script 
 ./script_rendu.sh 
 build /repertoire_target/ & 
-....
- Le script doit être résilient (problème de connexion internet, absence d’images 
-dans le dossier images/, droit d’écriture sur le chemin de destination, ...)
-....
-Le script doit indiquer l’erreur à son utilisateur et donner des pistes de 
-solution
+
+tester savoir si on peut delete 
+
 .... for up 10>20
 ▸ Une fonctionnalité de commentaire sous les articles du blog via un système de 
 persistence (fichier.json, sqlite, data.csv ...)
