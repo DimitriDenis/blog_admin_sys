@@ -78,6 +78,19 @@ elif [ "$1" == "update" ]
     echo "vous navez pas crée de blog ou vous l'avez deja suprimmer"
     echo "vous ne pouvez pas utilisé cette commande "
     fi
+elif [ "$1" == "delete" ]
+    then 
+    if [[ -e "blog" ]];
+        then 
+            rm -r blog 
+            rm -r js
+            rm -r css
+
+            echo "blog bien suprimer"
+    else
+    echo "vous navez pas crée de blog ou vous l'avez deja suprimmer"
+    echo "vous ne pouvez pas utilisé cette commande "
+    fi
 else
 echo "commande inconnue "
 fi   
