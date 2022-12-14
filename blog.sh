@@ -98,4 +98,4 @@ fi
 
 
 
-#x-www-browser localhost:8081
+x-www-browser blog/index.html
